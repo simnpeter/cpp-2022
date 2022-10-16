@@ -124,7 +124,7 @@ pair<Point, Point> farthestPoints(Point *points, int numPoints) {
 }
 
 void sortPoints(Point *points, int numPoints) {
-        sort(points, points+numPoints, myFunction);
+    sort(points, points+numPoints, myFunction);
     printArray(points, numPoints);
 }
 

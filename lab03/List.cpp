@@ -7,7 +7,7 @@
 using namespace std;
 
 List::List() {
-    this->first = new Node(0, nullptr);
+    this->first = nullptr;
 }
 
 List::~List() {
@@ -47,13 +47,18 @@ bool List::empty() const {
 }
 
 void List::insertFirst(int d) {
+    if(this->first == nullptr){
+        this->first = new Node(d, nullptr);
+        return;
+    }
     Node* newNode = new Node(d, this->first);
     this->first = newNode;
 }
 
 int List::removeFirst() {
     if(empty()){
-        throw invalid_argument("The list is allready empty\n");
+        this->first = nullptr;
+        return-1;
     }
     int d = this->first->value;
     Node *temp = this->first->next;

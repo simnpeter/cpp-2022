@@ -1,9 +1,10 @@
-#include "functions.h"
+#include "Stack.h"
 #include "List.h"
 
 using namespace std;
-int main() {
-    List list =  List();
+int main() {/*
+    List list = List();
+    list.print();
     for (int i = 1; i < 12; ++i) {
         list.insertFirst(i);
     }
@@ -35,6 +36,47 @@ int main() {
     if(list.empty()){
         cout << "is empty\n";
     }
-    list.print();
+    list.print();*/
+    Stack stack = Stack();
+    if(stack.isEmpty()){
+        cout << "stack is empty" << endl;
+    }
+    else{
+        cout << "not empty" << endl;
+    }
+    stack.push(2);
+    cout << stack.pop() << endl;
+    if(stack.isEmpty()){
+        cout << "stack is empty" << endl;
+    }
+    else{
+        cout << "not empty" << endl;
+    }
+    for (int i = 1; i < 22; ++i) {
+        stack.push(i*i);
+    }
+    if(stack.isEmpty()){
+        cout << "stack is empty" << endl;
+    }
+    else{
+        cout << "not empty" << endl;
+    }
+    for (int i = 0; i < 20; ++i) {
+        cout << stack.pop() << endl;
+    }
+    if(stack.isEmpty()){
+        cout << "stack is empty" << endl;
+    }
+    else{
+        cout << "not empty" << endl;
+    }
+    cout << stack.pop() << endl;
+    if(stack.isEmpty()){
+        cout << "stack is empty" << endl;
+    }
+    else{
+        cout << "not empty" << endl;
+    }
+    stack.~Stack();
     return 0;
 }

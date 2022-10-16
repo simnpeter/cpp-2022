@@ -7,6 +7,7 @@
 
 #include <iostream>
 
+using namespace std;
 class List {
 public:
 /* creates an empty list */
