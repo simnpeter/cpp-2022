@@ -15,6 +15,7 @@ struct sPoint{
 };
 
 double distance(const Point& a, const Point& b);
+double sqrDistance(Point a, Point b);
 bool isSquare(const Point& a, const Point& b, const Point& c, const Point& d);
 void testIsSquare(const char * filename);
 Point* createArray(int numPoints);

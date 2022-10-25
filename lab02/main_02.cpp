@@ -17,6 +17,10 @@ int main(int argc, char** argv) {
     delete pp2;
     //feladat 5
     Point d1 = { 20, 10 }, d2 = { 10, 20 },  d3 = { 20, 20 }, d4 = { 10, 10 };
+    d1.print();
+    d2.print();
+    d3.print();
+    d4.print();
     isSquare(d1, d2, d3, d4) ? cout << "Yes\n" : cout << "No\n";
     //feladat 6
     testIsSquare("bemenet.txt");

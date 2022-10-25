@@ -11,21 +11,18 @@ double distance(const Point &a, const Point &b) {
 }
 
 bool isSquare(const Point &a, const Point &b, const Point &c, const Point &d) {
-    int d2 = (int)pow(distance(a, b),2);
-    int d3 = (int)pow(distance(a, c),2);
-    int d4 = (int)pow(distance(a, d),2);
+    double d2 = sqrDistance(a, b);
+    double d3 = sqrDistance(a, c);
+    double d4 = sqrDistance(a, d);
 
-    if (d2 == 0 || d3 == 0 || d4 == 0)
-        return false;
-    if (d2 == d3 && 2 * d2 == d4 && 2 * (int)pow(distance(b, d),2) == (int)pow(distance(b, c),2)) {
-        return true;
-    }
-    if (d3 == d4 && 2 * d3 == d2 && 2 * (int)pow(distance(c, b),2) == (int)pow(distance(c, d),2)) {
-        return true;
-    }
-    if (d2 == d4 && 2 * d2 == d3 && 2 * (int)pow(distance(b, c),2) == (int)pow(distance(b, d),2)) {
-        return true;
-    }
+    if(d2 == 0 || d3 == 0 || d4 == 0) return false;
+
+    if(d2 == d3 && 2*d2 == d4 && 2* sqrDistance(b, d) == sqrDistance(b, c)) return true;
+
+    if(d3 == d4 && 2*d3 == d2 && 2* sqrDistance(c, b) == sqrDistance(c, d)) return true;
+
+    if(d2 == d4 && 2*d2 == d3 && 2* sqrDistance(b, c) == sqrDistance(b, d)) return true;
+
     return false;
 }
 
@@ -37,32 +34,18 @@ void testIsSquare(const char *filename) {
         exit(0);
     }
     string text;
-    Point *a, *b, *c, *d;
+    Point points[4];
     int a1, a2;
     while (getline(input_file, text)) {
         istringstream nums(text);
-        nums >> a1;
-        nums >> a2;
-        a = new Point(a1, a2);
-        nums >> a1;
-        nums >> a2;
-        b = new Point(a1, a2);
-        nums >> a1;
-        nums >> a2;
-        c = new Point(a1, a2);
-        nums >> a1;
-        nums >> a2;
-        d = new Point(a1, a2);
-        a->print();
-        b->print();
-        c->print();
-        d->print();
-        isSquare(*a, *b, *c, *d) ? cout << "Yes" << endl : cout << "No" << endl;
+        for (int i = 0; i < 4; ++i) {
+            nums >> a1;
+            nums >> a2;
+            points[i] = Point(a1, a2);
+            points[i].print();
+        }
+        isSquare(points[0], points[1], points[2], points[3]) ? cout << "Yes" << endl : cout << "No" << endl;
     }
-    delete a;
-    delete b;
-    delete c;
-    delete d;
     cout << endl;
     input_file.close();
 }
@@ -168,4 +151,8 @@ Point *farthestPointsFromOrigin(Point *points, int numPoints) {
 
 bool myFunction2(sPoint a, sPoint b) {
     return a.farest > b.farest;
+}
+
+double sqrDistance(Point a, Point b) {
+    return pow((a.getX()-b.getX()), 2)+pow(a.getY()-b.getY(),2);
 }
