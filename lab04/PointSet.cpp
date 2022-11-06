@@ -49,6 +49,7 @@ void PointSet::printDistances() const {
     }
 }
 
+
 void PointSet::sortPointsX() {
     sort(points.begin(), points.end(), comparex);
 }

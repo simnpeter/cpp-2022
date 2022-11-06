@@ -22,6 +22,8 @@ double Point::distanceTO(const Point& point)const{
     return sqrt(pow((this->x-point.getX()), 2)+pow(this->y-point.getY(),2));
 }
 
+int Point::counter{0};
+
 void Point::print() const {
     std::cout << "( "<<getX()<<","<<getY()<<" )"<<std::endl;
 }
