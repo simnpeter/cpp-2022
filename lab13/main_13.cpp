@@ -1,6 +1,15 @@
-#include <iostream>
+#include "myifstream.h"
+#include "huffman.h"
 
+using namespace std;
 int main() {
-    std::cout << "Hello, Lab_13" << std::endl;
+    /*
+    myifstream f("be.txt");
+    for( int i=0; i <f.filesize(); ++i){
+        cout << f[i] << endl;
+    }
+    cout << endl;
+    */
+    huffman huff("be.txt");
     return 0;
 }

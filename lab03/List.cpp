@@ -12,14 +12,20 @@ List::List() {
 
 List::~List() {
     Node *temp = this->first;
-    while(temp)
+    if(temp->next != nullptr){
+        this->first = this->first->next;
+        this->~List();
+    }
+    delete temp;
+    /*while(temp)
     {
         temp = temp->next;
         delete this->first;
         this->first = temp;
     }
     temp = nullptr;
-}
+    */
+     }
 
 bool List::exists(int d) const {
     Node *temp = this->first;

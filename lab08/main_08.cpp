@@ -65,9 +65,14 @@ int main() {
     cout << endl;
     vector<char> abc{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','z'};
     shuffle(abc.begin(), abc.end(), std::mt19937(std::random_device()()));
-    for (char &a: abc) cout << a << ' '; cout << endl;
+    for (char &a: abc) {
+        cout << a << ' ';
+        cout << endl;
+    }
     sort(months.begin(), months.end(), [abc](string &a, string &b)
     {return count(abc.begin(), abc.end(), a[0]) > count(abc.begin(), abc.end(), b[0]);});
-    for (string &a : months){cout << a << ' ';}
+    for (string &a : months){
+        cout << a << ' ';
+    }
     return 0;
 }
