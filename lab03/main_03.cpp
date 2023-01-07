@@ -2,7 +2,7 @@
 #include "List.h"
 
 using namespace std;
-int main() {/*
+int main() {
     List list = List();
     list.print();
     for (int i = 1; i < 12; ++i) {
@@ -36,7 +36,7 @@ int main() {/*
     if(list.empty()){
         cout << "is empty\n";
     }
-    list.print();*/
+    list.print();/*
     Stack stack = Stack();
     if(stack.isEmpty()){
         cout << "stack is empty" << endl;
@@ -77,6 +77,6 @@ int main() {/*
     else{
         cout << "not empty" << endl;
     }
-    stack.~Stack();
+    stack.~Stack();*/
     return 0;
 }

@@ -75,6 +75,6 @@ void OrderedList<T, LessComp, Equal>::insert(T &t) {
         return;
     }
     Node* tempfirst = this->first;
-    Node*
+
 }
 #endif //CPP_2022_ORDEREDLIST_H
